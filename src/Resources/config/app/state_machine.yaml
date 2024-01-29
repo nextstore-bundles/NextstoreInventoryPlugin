@@ -1,0 +1,28 @@
+winzou_state_machine:
+    nextstore_sylius_inventory_inventory_movement:
+        class: "%nextstore_sylius_inventory.model.inventory_movement.class%"
+        property_path: state
+        graph: nextstore_sylius_inventory_inventory_movement
+        state_machine_class: "%sylius.state_machine.class%"
+        states:
+            new: ~
+            completed: ~
+            cancelled: ~
+        transitions:
+            complete:
+                from: [new]
+                to: completed
+            cancel:
+                from: [new]
+                to: cancelled
+        callbacks:
+            after:
+                nextstore_sylius_inventory_write_log:
+                    on: ["complete"]
+                    do:
+                        [
+                            "@nextstore_sylius_inventory.service.inventory_movement",
+                            "writeLog",
+                        ]
+                    args: ["object"]
+                    priority: -100

@@ -1,0 +1,32 @@
+nextstore_sylius_inventory:
+    ui:
+        stock: In stock
+        assign_date: Assign date
+        added: Added
+        subtracted: Subtracted
+        initial_stock: Initial stock
+        final_stock: Final stock
+        warehouse: "Warehouse"
+        warehouses: "Warehouses"
+        edit_warehouse: "Edit warehouse"
+        new_warehouse: "New warehouse"
+        inventory_product: Inventory product
+        inventory_products: Inventory products
+        edit_inventory_product: Edit inventory products
+        new_inventory_product: New inventory products
+        inventory_movement: Inventory movement
+        inventory_movements: Inventory movements
+        edit_inventory_movement: Edit inventory movement
+        new_inventory_movement: New inventory movement
+        inventory_movement_log: Inventory movement log
+        inventory_movement_logs: Inventory movements logs
+        created_by: Created by
+        add_product_to_movement: Add product to movement
+    inventory_movement_log:
+        subheader: Manage logs of movements
+    inventory_movement:
+        subheader: Manage movements of inventory
+    inventory_product:
+        subheader: Manage products in inventory
+    warehouse:
+        subheader: Manage warehouses

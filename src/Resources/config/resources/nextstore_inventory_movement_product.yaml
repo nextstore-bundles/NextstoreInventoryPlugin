@@ -1,0 +1,9 @@
+sylius_resource:
+    resources:
+        nextstore_sylius_inventory.inventory_movement_product:
+            driver: doctrine/orm
+            classes:
+                model: Nextstore\SyliusInventoryPlugin\Entity\InventoryMovementProduct
+                interface: Nextstore\SyliusInventoryPlugin\Entity\InventoryMovementProductInterface
+                repository: Nextstore\SyliusInventoryPlugin\Repository\Inventory\InventoryMovementProductRepository
+                factory: Sylius\Component\Resource\Factory\Factory

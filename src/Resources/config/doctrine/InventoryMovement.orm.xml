@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--suppress XmlDefaultAttributeValue -->
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+
+    <mapped-superclass name="Nextstore\SyliusInventoryPlugin\Entity\InventoryMovement"
+        table="nextstore_inventory_movement">
+        <id name="id" column="id" type="integer">
+            <generator strategy="AUTO" />
+        </id>
+        <many-to-one field="warehouse"
+            target-entity="Nextstore\SyliusInventoryPlugin\Entity\Warehouse"
+            inversed-by="movements"
+        >
+            <join-column name="warehouse_id" referenced-column-name="id" nullable="true"
+                on-delete="CASCADE" />
+        </many-to-one>
+        <many-to-one field="createdBy"
+            target-entity="Sylius\Component\Core\Model\AdminUser"
+        >
+            <join-column name="created_by" referenced-column-name="id" nullable="true" />
+        </many-to-one>
+
+        <one-to-many field="products"
+            target-entity="Nextstore\SyliusInventoryPlugin\Entity\InventoryMovementProductInterface"
+            mapped-by="movement">
+            <cascade>
+                <cascade-persist />
+            </cascade>
+        </one-to-many>
+
+        <field name="type" type="string" nullable="false" />
+        <field name="state" type="string" nullable="false" />
+        <field name="notes" type="string" nullable="true" />
+        <field name="assignDate" column="assign_date" type="datetime" nullable="true" />
+        <field name="createdAt" column="created_at" type="datetime" nullable="true" />
+        <field name="updatedAt" column="updated_at" type="datetime" nullable="true" />
+    </mapped-superclass>
+</doctrine-mapping>

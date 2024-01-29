@@ -1,0 +1,31 @@
+Nextstore\SyliusInventoryPlugin\Entity\InventoryMovementProduct:
+    exclusion_policy: ALL
+    xml_root_name: inventory_movement_product
+    properties:
+        id:
+            expose: true
+            groups: [Default, Detailed]
+        quantity:
+            expose: true
+            groups: [Default, Detailed]
+        notes:
+            expose: true
+            groups: [Default, Detailed]
+        createdAt:
+            expose: true
+            type: datetime
+            format: "Y-m-d H:i:s"
+            groups: [Default, Detailed]
+        updatedAt:
+            expose: true
+            type: datetime
+            format: "Y-m-d H:i:s"
+            groups: [Default, Detailed]
+        movement:
+            expose: true
+            type: 'Nextstore\SyliusInventoryPlugin\Entity\InventoryMovementInterface'
+            groups: [Default, Detailed]
+        product:
+            expose: true
+            type: 'Nextstore\SyliusInventoryPlugin\Entity\InventoryProduct'
+            groups: [Default, Detailed]

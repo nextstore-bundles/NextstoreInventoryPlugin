@@ -1,0 +1,49 @@
+sylius_grid:
+    grids:
+        nextstore_sylius_inventory_admin_inventory_movement_log:
+            driver:
+                name: doctrine/orm
+                options:
+                    class: "%nextstore_sylius_inventory.model.inventory_movement_log.class%"
+            sorting:
+                assignDate: desc
+            fields:
+                assignDate:
+                    type: datetime
+                    label: sylius.ui.date
+                    sortable: ~
+                    options:
+                        format: d-m-Y H:i
+                warehouse:
+                    type: twig
+                    label: nextstore_sylius_inventory.ui.warehouse
+                    options:
+                        template: "@NextstoreSyliusInventoryPlugin/Admin/Inventory/Grid/Fields/_warehouse.html.twig"
+                initialStock:
+                    type: string
+                    label: nextstore_sylius_inventory.ui.initial_stock
+                    sortable: ~
+                added:
+                    type: string
+                    label: nextstore_sylius_inventory.ui.added
+                    sortable: ~
+                subtracted:
+                    type: string
+                    label: nextstore_sylius_inventory.ui.subtracted
+                    sortable: ~
+                finalStock:
+                    type: string
+                    label: nextstore_sylius_inventory.ui.final_stock
+                    sortable: ~
+            filters:
+                assignDate:
+                    type: date
+                    label: sylius.ui.date
+                    options:
+                        field: checkoutCompletedAt
+                        inclusive_to: true
+                warehouse:
+                    type: entity
+                    label: nextstore_sylius_inventory.ui.warehouse
+                    form_options:
+                        class: "%nextstore_sylius_inventory.model.warehouse.class%"

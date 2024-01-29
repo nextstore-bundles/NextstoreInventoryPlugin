@@ -1,0 +1,11 @@
+{% if data %}
+    <div class="ui header">
+        {% include '@SyliusAdmin/Product/_mainImage.html.twig' with {'product': data, 'filter': 'sylius_admin_product_tiny_thumbnail'} %}
+        <div class="content">
+            <div class="sylius-product-name" title="{{ data.name }}">{{ data.name }}</div>
+            <span class="sub header sylius-product-variant-code" title="{{ data.code }}">
+                {{ data.code }}
+            </span>
+        </div>
+    </div>
+{% endif %}

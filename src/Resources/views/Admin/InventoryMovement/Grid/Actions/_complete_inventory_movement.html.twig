@@ -1,0 +1,18 @@
+{% import '@SyliusUi/Macro/buttons.html.twig' as buttons %}
+
+{% set path = options.link.url|default(path(options.link.route, {id: options.link.parameters.id})) %}
+
+{% if sm_can(data, 'complete', 'nextstore_sylius_inventory_inventory_movement') and data.products|length > 0 and data.assignDate is not null %}
+    <form
+        method="post"
+        novalidate
+        action="{{path}}"
+    >
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token(data.id) }}" />
+        <input type="hidden" name="_method" value="PUT">
+        <button type="submit" class="ui icon labeled tiny green fluid loadable button">
+            <i class="check icon"></i>
+            {{ action.label|trans }}
+        </button>
+    </form>
+{% endif %}

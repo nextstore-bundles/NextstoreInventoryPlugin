@@ -1,0 +1,38 @@
+Nextstore\SyliusInventoryPlugin\Entity\InventoryMovementLog:
+    exclusion_policy: ALL
+    xml_root_name: inventory_movement_log
+    properties:
+        id:
+            expose: true
+            groups: [Default, Detailed]
+        assignDate:
+            expose: true
+            type: datetime
+            format: "Y-m-d H:i:s"
+            groups: [Default, Detailed]
+        initialStock:
+            expose: true
+            groups: [Default, Detailed]
+        finalStock:
+            expose: true
+            groups: [Default, Detailed]
+        added:
+            expose: true
+            groups: [Default, Detailed]
+        subtracted:
+            expose: true
+            groups: [Default, Detailed]
+        createdAt:
+            expose: true
+            type: datetime
+            format: "Y-m-d H:i:s"
+            groups: [Default, Detailed]
+        updatedAt:
+            expose: true
+            type: datetime
+            format: "Y-m-d H:i:s"
+            groups: [Default, Detailed]
+        warehouse:
+            expose: true
+            type: 'Nextstore\SyliusInventoryPlugin\Entity\Warehouse'
+            groups: [Default, Detailed]

@@ -1,0 +1,107 @@
+nextstore_sylius_inventory_admin_warehouse:
+    resource: |
+        alias: nextstore_sylius_inventory.warehouse
+        section: admin
+        templates: "@SyliusAdmin\\Crud"
+        redirect: update
+        grid: nextstore_sylius_inventory_admin_warehouse
+        vars:
+            all:
+                subheader: nextstore_sylius_inventory.warehouse.subheader
+            index:
+                icon: 'warehouse'
+    type: sylius.resource
+    prefix: /admin
+
+nextstore_sylius_inventory_admin_inventory_movement:
+    resource: |
+        alias: nextstore_sylius_inventory.inventory_movement
+        section: admin
+        templates: "@SyliusAdmin\\Crud"
+        redirect: update
+        grid: nextstore_sylius_inventory_admin_inventory_movement
+        vars:
+            all:
+                subheader: nextstore_sylius_inventory.inventory_movement.subheader
+            index:
+                icon: 'sync'
+    type: sylius.resource
+    prefix: /admin
+
+nextstore_sylius_inventory_admin_inventory_movement_log:
+    resource: |
+        alias: nextstore_sylius_inventory.inventory_movement_log
+        section: admin
+        templates: "@SyliusAdmin\\Crud"
+        redirect: update
+        grid: nextstore_sylius_inventory_admin_inventory_movement_log
+        vars:
+            all:
+                subheader: nextstore_sylius_inventory.inventory_movement_log.subheader
+            index:
+                icon: 'clipboard'
+    type: sylius.resource
+    prefix: /admin
+
+nextstore_sylius_inventory_admin_inventory_product:
+    resource: |
+        alias: nextstore_sylius_inventory.inventory_product
+        section: admin
+        templates: "@SyliusAdmin\\Crud"
+        redirect: update
+        grid: nextstore_sylius_inventory_admin_inventory_product
+        vars:
+            all:
+                subheader: nextstore_sylius_inventory.inventory_product.subheader
+            index:
+                icon: 'tag'
+    type: sylius.resource
+    prefix: /admin
+
+nextstore_sylius_inventory_admin_ajax_inventory_product_by_code:
+    path: /admin/inventory-products-search
+    methods: [GET]
+    defaults:
+        _controller: nextstore_sylius_inventory.controller.inventory_product::indexAction
+        _format: json
+        _sylius:
+            serialization_groups: [Autocomplete]
+            permission: true
+            repository:
+                method: findByProductCode
+                arguments:
+                    phrase: $phrase
+                    warehouse: $warehouse
+                    limit: 20
+
+nextstore_sylius_inventory_admin_inventory_movement_complete:
+    path: /admin/inventory-movements/{id}/complete
+    methods: [PUT]
+    defaults:
+        _controller: nextstore_sylius_inventory.controller.inventory_movement::applyStateMachineTransitionAction
+        _sylius:
+            permission: true
+            state_machine:
+                graph: nextstore_sylius_inventory_inventory_movement
+                transition: complete
+            redirect: referer
+
+nextstore_sylius_inventory_admin_inventory_movement_cancel:
+    path: /admin/inventory-movements/{id}/cancel
+    methods: [PUT]
+    defaults:
+        _controller: nextstore_sylius_inventory.controller.inventory_movement::applyStateMachineTransitionAction
+        _sylius:
+            permission: true
+            state_machine:
+                graph: nextstore_sylius_inventory_inventory_movement
+                transition: cancel
+            redirect: referer
+
+nextstore_sylius_inventory_admin_inventory_movement_add_product:
+    path: /admin/inventory_movements/{id}/add-product
+    methods: [POST, GET]
+    defaults:
+        _controller: nextstore_sylius_inventory.controller.add_product_to_movement_action
+        _sylius:
+            permission: true

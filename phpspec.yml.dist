@@ -1,0 +1,4 @@
+suites:
+    main:
+        namespace: Nextstore\SyliusInventoryPlugin
+        psr4_prefix: Nextstore\SyliusInventoryPlugin

@@ -1,0 +1,11 @@
+{% set path = options.link.url|default(path(options.link.route, {id: options.link.parameters.id})) %}
+
+{% if sm_can(data, 'complete', 'nextstore_sylius_inventory_inventory_movement') %}
+<a
+    href="{{path}}"
+    class="ui icon labeled tiny blue loadable button"
+>
+        <i class="plus icon"></i>
+        {{ action.label|trans }}
+</a>
+{% endif %}

@@ -1,0 +1,31 @@
+{% extends '@!SyliusAdmin/layout.html.twig' %}
+{% form_theme form '@SyliusAdmin/Form/theme.html.twig' %}
+
+{% block content %}
+<div class="ui stackable two column grid">
+    <div class="column">
+        <h1 class="ui header">
+            <i class="circular pencil icon"></i>
+            <div class="content">
+                {{'nextstore_sylius_inventory.ui.add_product_to_movement'|trans }}
+                <div class="sub header">{{'nextstore_sylius_inventory.inventory_movement.subheader'|trans}}</div>
+            </div>
+        </h1>
+        <div class="ui breadcrumb">
+            <a href="/admin/" class="section">{{'sylius.ui.administration' | trans}}</a>
+            <i class="right chevron icon divider"></i>
+            <a href="/admin/inventory-movements/" class="section">{{'nextstore_sylius_inventory.ui.inventory_movements'|trans}}</a>
+            <i class="right chevron icon divider"></i>
+            <div class="active section">{{'nextstore_sylius_inventory.ui.add_product_to_movement'|trans}}</div>
+        </div>
+    </div>
+    <div class="middle aligned column">
+    </div>
+</div>
+	{{ form_start(form, {
+        'action': path('nextstore_sylius_inventory_admin_inventory_movement_add_product',{id: movement.id}),
+        'attr': {'class': 'ui loadable form', 'novalidate': 'novalidate'}})
+    }}
+    {{ form_row(form.products)}}
+    {{form_end(form)}}
+{% endblock %}

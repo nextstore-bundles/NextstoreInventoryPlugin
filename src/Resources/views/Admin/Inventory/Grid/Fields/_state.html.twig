@@ -1,0 +1,9 @@
+{% if data %}
+    {% if data is same as('new') %}
+        <div class='ui label yellow'>NEW</div>
+    {% elseif data is same as('cancelled')%}
+        <div class='ui label red'>CANCELLED</div>
+    {% elseif data is same as('completed')%}
+        <div class='ui label green'>COMPLETED</div>
+    {% endif %}
+{% endif %}

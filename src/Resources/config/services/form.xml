@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="nextstore_sylius_inventory.form.type.warehouse.validation_groups"
+            type="collection">
+            <parameter>nextstore_sylius_inventory</parameter>
+        </parameter>
+        <parameter key="nextstore_sylius_inventory.form.type.inventory_product.validation_groups"
+            type="collection">
+            <parameter>nextstore_sylius_inventory</parameter>
+        </parameter>
+        <parameter key="nextstore_sylius_inventory.form.type.inventory_movement.validation_groups"
+            type="collection">
+            <parameter>nextstore_sylius_inventory</parameter>
+        </parameter>
+    </parameters>
+
+    <services>
+
+        <service id="nextstore_sylius_inventory.form.type.inventory_product"
+            class="Nextstore\SyliusInventoryPlugin\Form\Type\InventoryProductType">
+            <argument>%nextstore_sylius_inventory.model.inventory_product.class%</argument>
+            <argument>%nextstore_sylius_inventory.form.type.inventory_product.validation_groups%</argument>
+            <tag name="form.type" />
+        </service>
+
+        <service id="nextstore_sylius_inventory.form.type.warehouse"
+            class="Nextstore\SyliusInventoryPlugin\Form\Type\WarehouseType">
+            <argument>%nextstore_sylius_inventory.model.warehouse.class%</argument>
+            <argument>%nextstore_sylius_inventory.form.type.warehouse.validation_groups%</argument>
+            <tag name="form.type" />
+        </service>
+
+        <service id="nextstore_sylius_inventory.form.type.inventory_movement"
+            class="Nextstore\SyliusInventoryPlugin\Form\Type\InventoryMovementType"
+        >
+            <argument>%nextstore_sylius_inventory.model.inventory_movement.class%</argument>
+            <argument>%nextstore_sylius_inventory.form.type.inventory_movement.validation_groups%</argument>
+            <tag name="form.type" />
+        </service>
+
+        <!-- <service
+        id="nextstore_sylius_inventory.form.type.inventory_product_autocomplete_choice" -->
+        <!--
+        class="Nextstore\SyliusInventoryPlugin\Form\Type\InventoryProductAutocompleteChoiceType"> -->
+        <!--     <tag name="form.type" -->
+        <!--         alias="nextstore_sylius_inventory_inventory_product_autocomplete_choice" /> -->
+        <!-- </service> -->
+    </services>
+</container>

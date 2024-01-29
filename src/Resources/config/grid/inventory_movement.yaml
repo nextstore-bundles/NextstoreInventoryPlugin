@@ -1,0 +1,116 @@
+sylius_grid:
+    templates:
+        action:
+            cancel_inventory_movement: "@NextstoreSyliusInventoryPlugin/Admin/InventoryMovement/Grid/Actions/_cancel_inventory_movement.html.twig"
+            complete_inventory_movement: "@NextstoreSyliusInventoryPlugin/Admin/InventoryMovement/Grid/Actions/_complete_inventory_movement.html.twig"
+            add_product: "@NextstoreSyliusInventoryPlugin/Admin/InventoryMovement/Grid/Actions/_add_product.html.twig"
+    grids:
+        nextstore_sylius_inventory_admin_inventory_movement:
+            driver:
+                name: doctrine/orm
+                options:
+                    class: "%nextstore_sylius_inventory.model.inventory_movement.class%"
+            sorting:
+                createdAt: desc
+            fields:
+                createdAt:
+                    type: datetime
+                    label: sylius.ui.created_at
+                    sortable: ~
+                    options:
+                        format: d-m-Y H:i
+                type:
+                    type: string
+                    label: sylius.ui.type
+                    sortable: ~
+                state:
+                    type: twig
+                    label: sylius.ui.state
+                    sortable: ~
+                    options:
+                        template: "@NextstoreSyliusInventoryPlugin/Admin/Inventory/Grid/Fields/_state.html.twig"
+                assignDate:
+                    type: datetime
+                    label: sylius.ui.date
+                    sortable: ~
+                    options:
+                        format: d-m-Y H:i
+                warehouse:
+                    type: twig
+                    label: nextstore_sylius_inventory.ui.warehouse
+                    options:
+                        template: "@NextstoreSyliusInventoryPlugin/Admin/Inventory/Grid/Fields/_warehouse.html.twig"
+                createdBy:
+                    type: twig
+                    label: nextstore_sylius_inventory.ui.created_by
+                    options:
+                        template: "@NextstoreSyliusInventoryPlugin/Admin/Inventory/Grid/Fields/_created_by.html.twig"
+            filters:
+                createdAt:
+                    type: date
+                    label: sylius.ui.creation_date
+                    options:
+                        field: checkoutCompletedAt
+                        inclusive_to: true
+                assignDate:
+                    type: date
+                    label: sylius.ui.date
+                    options:
+                        field: checkoutCompletedAt
+                        inclusive_to: true
+                createdBy:
+                    type: entity
+                    label: nextstore_sylius_inventory.ui.created_by
+                    form_options:
+                        class: "%sylius.model.admin_user.class%"
+                warehouse:
+                    type: entity
+                    label: nextstore_sylius_inventory.ui.warehouse
+                    form_options:
+                        class: "%nextstore_sylius_inventory.model.warehouse.class%"
+                state:
+                    type: select
+                    label: sylius.ui.state
+                    form_options:
+                        choices:
+                            sylius.ui.new: new
+                            sylius.ui.completed: completed
+                            sylius.ui.cancelled: cancelled
+                type:
+                    type: select
+                    label: sylius.ui.type
+                    form_options:
+                        choices:
+                            nextstore_sylius_inventory.ui.income: income
+                            nextstore_sylius_inventory.ui.outcome: outcome
+            actions:
+                main:
+                    create:
+                        type: create
+                item:
+                    update:
+                        type: update
+                    add_product:
+                        type: add_product
+                        label: "sylius.ui.add"
+                        options:
+                            link:
+                                route: nextstore_sylius_inventory_admin_inventory_movement_add_product
+                                parameters:
+                                    id: resource.id
+                    complete:
+                        type: complete_inventory_movement
+                        label: "sylius.ui.complete"
+                        options:
+                            link:
+                                route: nextstore_sylius_inventory_admin_inventory_movement_complete
+                                parameters:
+                                    id: resource.id
+                    cancel:
+                        type: cancel_inventory_movement
+                        label: "sylius.ui.cancel"
+                        options:
+                            link:
+                                route: nextstore_sylius_inventory_admin_inventory_movement_cancel
+                                parameters:
+                                    id: resource.id

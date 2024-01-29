@@ -1,0 +1,35 @@
+Nextstore\SyliusInventoryPlugin\Entity\InventoryProduct:
+    exclusion_policy: ALL
+    xml_root_name: inventory_product
+    properties:
+        id:
+            expose: true
+            groups: [Default, Detailed, Autocomplete]
+        stock:
+            expose: true
+            groups: [Default, Detailed]
+        productCode:
+            expose: true
+            groups: [Default, Detailed, Autocomplete]
+        createdAt:
+            expose: true
+            type: datetime
+            format: "Y-m-d H:i:s"
+            groups: [Default, Detailed]
+        updatedAt:
+            expose: true
+            type: datetime
+            format: "Y-m-d H:i:s"
+            groups: [Default, Detailed]
+        warehouse:
+            expose: true
+            type: 'Nextstore\SyliusInventoryPlugin\Entity\Warehouse'
+            groups: [Default, Detailed]
+        product:
+            expose: true
+            type: 'Sylius\Component\Core\Model\Product'
+            groups: [Default, Detailed]
+    virtual_properties:
+        getProductCode:
+            serialized_name: productCode
+            groups: [Default, Detailed, Autocomplete]

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<constraint-mapping xmlns="http://symfony.com/schema/dic/constraint-mapping"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/constraint-mapping http://symfony.com/schema/dic/services/constraint-mapping-1.0.xsd">
+
+    <class name="Nextstore\SyliusInventoryPlugin\Entity\Warehouse">
+
+        <constraint name="Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity">
+            <option name="fields">code</option>
+            <option name="message">
+            nextstore_sylius_inventory.warehouse.code.unique</option>
+            <option name="groups">
+            nextstore_sylius_inventory</option>
+        </constraint>
+        <property name="code">
+            <constraint name="NotBlank">
+                <option name="message">nextstore_sylius_inventory.warehouse.code.not_blank</option>
+                <option
+                    name="groups">nextstore_sylius_inventory</option>
+            </constraint>
+            <constraint name="Length">
+                <option name="max">255</option>
+                <option name="maxMessage">
+                nextstore_sylius_inventory.warehouse.code.max_length</option>
+                <option name="groups">
+                nextstore_sylius_inventory</option>
+            </constraint>
+            <constraint name="Regex">
+                <option name="message">nextstore_sylius_inventory.warehouse.code.regex</option>
+                <option
+                    name="pattern">/^[\w-]*$/</option>
+                <option name="groups">
+                nextstore_sylius_inventory</option>
+            </constraint>
+        </property>
+
+        <property name="name">
+            <constraint name="NotBlank">
+                <option name="message">nextstore_sylius_inventory.warehouse.name.not_blank</option>
+                <option
+                    name="groups">nextstore_sylius_inventory</option>
+            </constraint>
+            <constraint name="Length">
+                <option name="min">2</option>
+                <option name="max">255</option>
+                <option
+                    name="minMessage">nextstore_sylius_inventory.warehouse.name.min_length</option>
+                <option
+                    name="maxMessage">nextstore_sylius_inventory.warehouse.name.max_length</option>
+                <option
+                    name="groups">nextstore_sylius_inventory</option>
+            </constraint>
+        </property>
+    </class>
+
+</constraint-mapping>

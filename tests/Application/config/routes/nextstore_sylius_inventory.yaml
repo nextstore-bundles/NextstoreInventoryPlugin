@@ -1,0 +1,2 @@
+nextstore_sylius_inventory:
+    resource: "@NextstoreSyliusInventoryPlugin/Resources/config/routing.yaml"
