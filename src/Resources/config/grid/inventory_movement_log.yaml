@@ -40,7 +40,7 @@ sylius_grid:
                     type: date
                     label: sylius.ui.date
                     options:
-                        field: checkoutCompletedAt
+                        field: assignDate
                         inclusive_to: true
                 warehouse:
                     type: entity

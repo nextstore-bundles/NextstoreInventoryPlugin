@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Nextstore\SyliusInventoryPlugin\Factory;
 
-use Nextstore\SyliusInventoryPlugin\Entity\InventoryMovementLogInterface;
-use Nextstore\SyliusInventoryPlugin\Entity\InventoryMovementLog;
-use Nextstore\SyliusInventoryPlugin\Entity\Warehouse;
+use Nextstore\SyliusInventoryPlugin\Model\InventoryMovementLogInterface;
+use Nextstore\SyliusInventoryPlugin\Model\InventoryMovementLog;
+use Nextstore\SyliusInventoryPlugin\Model\Warehouse;
 use Sylius\Component\Resource\Factory\FactoryInterface;
 
 class InventoryMovementLogFactory implements InventoryMovementLogFactoryInterface

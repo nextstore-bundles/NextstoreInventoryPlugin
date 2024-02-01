@@ -8,7 +8,6 @@
         <service id="nextstore_sylius_inventory.custom_factory.inventory_movement_log"
             class="Nextstore\SyliusInventoryPlugin\Factory\InventoryMovementLogFactory"
             decorates="nextstore_sylius_inventory.factory.inventory_movement_log"
-            decoration-priority="256"
             public="false"
         >
             <argument type="service"

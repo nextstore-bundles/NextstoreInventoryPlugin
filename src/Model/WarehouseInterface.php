@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Nextstore\SyliusInventoryPlugin\Entity;
+namespace Nextstore\SyliusInventoryPlugin\Model;
 
 use Doctrine\Common\Collections\Collection;
 use Sylius\Component\Resource\Model\ResourceInterface;

@@ -5,9 +5,7 @@ declare(strict_types=1);
 namespace Nextstore\SyliusInventoryPlugin\EventListener;
 
 use Doctrine\ORM\EntityManagerInterface;
-use Doctrine\ORM\Event\PrePersistEventArgs;
-use Nextstore\SyliusInventoryPlugin\Entity\InventoryMovement;
-use Nextstore\SyliusInventoryPlugin\Entity\InventoryMovementInterface;
+use Nextstore\SyliusInventoryPlugin\Model\InventoryMovementInterface;
 use Sylius\Bundle\ResourceBundle\Event\ResourceControllerEvent;
 use Symfony\Component\Security\Core\Security;
 

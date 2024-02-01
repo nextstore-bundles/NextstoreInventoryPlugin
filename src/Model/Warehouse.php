@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Nextstore\SyliusInventoryPlugin\Entity;
+namespace Nextstore\SyliusInventoryPlugin\Model;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
@@ -14,10 +14,13 @@ class Warehouse implements WarehouseInterface
 
     private ?int $id = null;
 
+    /** @var string */
     private string $name;
 
+    /** @var string */
     private string $code;
 
+    /** @var string */
     private ?string $location = null;
 
     private Collection $products;

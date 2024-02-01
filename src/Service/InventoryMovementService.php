@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace Nextstore\SyliusInventoryPlugin\Service;
 
 use Doctrine\ORM\EntityManagerInterface;
-use Nextstore\SyliusInventoryPlugin\Entity\InventoryMovement;
-use Nextstore\SyliusInventoryPlugin\Entity\InventoryMovementProduct;
-use Nextstore\SyliusInventoryPlugin\Entity\InventoryMovementLog;
+use Nextstore\SyliusInventoryPlugin\Model\InventoryMovement;
+use Nextstore\SyliusInventoryPlugin\Model\InventoryMovementProduct;
+use Nextstore\SyliusInventoryPlugin\Model\InventoryMovementLog;
 use Nextstore\SyliusInventoryPlugin\Factory\InventoryMovementLogFactoryInterface;
 use Sylius\Component\Resource\Factory\FactoryInterface;
 

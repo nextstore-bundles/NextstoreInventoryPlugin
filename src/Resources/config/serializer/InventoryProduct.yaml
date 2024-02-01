@@ -1,4 +1,4 @@
-Nextstore\SyliusInventoryPlugin\Entity\InventoryProduct:
+Nextstore\SyliusInventoryPlugin\Model\InventoryProduct:
     exclusion_policy: ALL
     xml_root_name: inventory_product
     properties:
@@ -23,7 +23,7 @@ Nextstore\SyliusInventoryPlugin\Entity\InventoryProduct:
             groups: [Default, Detailed]
         warehouse:
             expose: true
-            type: 'Nextstore\SyliusInventoryPlugin\Entity\Warehouse'
+            type: 'Nextstore\SyliusInventoryPlugin\Model\Warehouse'
             groups: [Default, Detailed]
         product:
             expose: true

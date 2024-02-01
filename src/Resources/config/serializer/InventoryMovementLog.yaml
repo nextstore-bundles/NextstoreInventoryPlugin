@@ -1,4 +1,4 @@
-Nextstore\SyliusInventoryPlugin\Entity\InventoryMovementLog:
+Nextstore\SyliusInventoryPlugin\Model\InventoryMovementLog:
     exclusion_policy: ALL
     xml_root_name: inventory_movement_log
     properties:
@@ -34,5 +34,5 @@ Nextstore\SyliusInventoryPlugin\Entity\InventoryMovementLog:
             groups: [Default, Detailed]
         warehouse:
             expose: true
-            type: 'Nextstore\SyliusInventoryPlugin\Entity\Warehouse'
+            type: 'Nextstore\SyliusInventoryPlugin\Model\Warehouse'
             groups: [Default, Detailed]

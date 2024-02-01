@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Nextstore\SyliusInventoryPlugin\Entity;
+namespace Nextstore\SyliusInventoryPlugin\Model;
 
 use Sylius\Component\Core\Model\Product;
 use Sylius\Component\Resource\Model\ResourceInterface;

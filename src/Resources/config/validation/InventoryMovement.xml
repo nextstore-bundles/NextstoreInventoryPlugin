@@ -4,7 +4,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://symfony.com/schema/dic/constraint-mapping http://symfony.com/schema/dic/services/constraint-mapping-1.0.xsd">
 
-    <class name="Nextstore\SyliusInventoryPlugin\Entity\InventoryMovement">
+    <class name="Nextstore\SyliusInventoryPlugin\Model\InventoryMovement">
 
         <property name="type">
             <constraint name="NotBlank">

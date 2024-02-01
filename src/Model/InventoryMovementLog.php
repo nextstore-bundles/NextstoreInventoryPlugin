@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Nextstore\SyliusInventoryPlugin\Entity;
+namespace Nextstore\SyliusInventoryPlugin\Model;
 
 use DateTime;
 use Sylius\Component\Resource\Model\TimestampableTrait;
@@ -15,12 +15,16 @@ class InventoryMovementLog implements InventoryMovementLogInterface
 
     private ?DateTime $assignDate;
 
+    /** @var int */
     private int $initialStock = 0;
 
+    /** @var int */
     private int $finalStock = 0;
 
+    /** @var int */
     private int $added = 0;
 
+    /** @var int */
     private int $subtracted = 0;
 
     private Warehouse $warehouse;

@@ -2,11 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Nextstore\SyliusInventoryPlugin\Entity;
+namespace Nextstore\SyliusInventoryPlugin\Model;
 
 use Sylius\Component\Core\Model\Product;
 use Sylius\Component\Resource\Model\TimestampableTrait;
-use Nextstore\SyliusInventoryPlugin\Entity\InventoryProductInterface;
 
 class InventoryProduct implements InventoryProductInterface
 {
@@ -16,10 +15,12 @@ class InventoryProduct implements InventoryProductInterface
 
     private Product $product;
 
+    /** @var int */
     private int $stock = 0;
 
     private Warehouse $warehouse;
 
+    /** @var string */
     private string $productCode;
 
     public function __construct()

@@ -1,4 +1,4 @@
-Nextstore\SyliusInventoryPlugin\Entity\Warehouse:
+Nextstore\SyliusInventoryPlugin\Model\Warehouse:
     exclusion_policy: ALL
     xml_root_name: warehouse
     properties:
@@ -26,13 +26,13 @@ Nextstore\SyliusInventoryPlugin\Entity\Warehouse:
             groups: [Default, Detailed]
         products:
             expose: true
-            type: 'ArrayCollection<Nextstore\SyliusInventoryPlugin\Entity\InventoryProduct>'
+            type: 'ArrayCollection<Nextstore\SyliusInventoryPlugin\Model\InventoryProduct>'
             groups: [Default, Detailed]
         movements:
             expose: true
-            type: 'ArrayCollection<Nextstore\SyliusInventoryPlugin\Entity\InventoryMovement>'
+            type: 'ArrayCollection<Nextstore\SyliusInventoryPlugin\Model\InventoryMovement>'
             groups: [Default, Detailed]
         logs:
             expose: true
-            type: 'ArrayCollection<Nextstore\SyliusInventoryPlugin\Entity\InventoryMovementLog>'
+            type: 'ArrayCollection<Nextstore\SyliusInventoryPlugin\Model\InventoryMovementLog>'
             groups: [Default, Detailed]

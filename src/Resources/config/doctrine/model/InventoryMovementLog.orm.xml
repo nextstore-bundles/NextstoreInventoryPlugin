@@ -5,13 +5,13 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
 
-    <mapped-superclass name="Nextstore\SyliusInventoryPlugin\Entity\InventoryMovementLog"
+    <mapped-superclass name="Nextstore\SyliusInventoryPlugin\Model\InventoryMovementLog"
         table="nextstore_inventory_movement_log">
         <id name="id" column="id" type="integer">
             <generator strategy="AUTO" />
         </id>
         <many-to-one field="warehouse"
-            target-entity="Nextstore\SyliusInventoryPlugin\Entity\Warehouse"
+            target-entity="Nextstore\SyliusInventoryPlugin\Model\Warehouse"
             inversed-by="logs"
         >
             <join-column name="warehouse_id" referenced-column-name="id" nullable="true"

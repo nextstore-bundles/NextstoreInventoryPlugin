@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Nextstore\SyliusInventoryPlugin\Form\Type;
 
-use Nextstore\SyliusInventoryPlugin\Entity\InventoryMovementProduct;
+use Nextstore\SyliusInventoryPlugin\Model\InventoryMovementProduct;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;

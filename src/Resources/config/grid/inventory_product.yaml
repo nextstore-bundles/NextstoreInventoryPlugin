@@ -8,6 +8,12 @@ sylius_grid:
             sorting:
                 createdAt: desc
             fields:
+                createdAt:
+                    type: datetime
+                    label: sylius.ui.created_at
+                    sortable: ~
+                    options:
+                        format: d-m-Y H:i
                 product:
                     type: twig
                     label: sylius.ui.product
