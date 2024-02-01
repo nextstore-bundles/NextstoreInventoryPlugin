@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Nextstore\SyliusInventoryPlugin\Controller\Admin\Action;
 
-use Nextstore\SyliusInventoryPlugin\Entity\InventoryMovement;
+use Nextstore\SyliusInventoryPlugin\Model\InventoryMovement;
 use Nextstore\SyliusInventoryPlugin\Form\Type\AddProductToMovementType;
 use Nextstore\SyliusInventoryPlugin\Service\InventoryMovementService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;

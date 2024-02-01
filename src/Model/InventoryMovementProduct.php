@@ -2,11 +2,8 @@
 
 declare(strict_types=1);
 
-namespace Nextstore\SyliusInventoryPlugin\Entity;
+namespace Nextstore\SyliusInventoryPlugin\Model;
 
-use Nextstore\SyliusInventoryPlugin\Entity\InventoryMovement;
-use Nextstore\SyliusInventoryPlugin\Entity\InventoryMovementProductInterface;
-use Nextstore\SyliusInventoryPlugin\Entity\InventoryProduct;
 use Sylius\Component\Resource\Model\TimestampableTrait;
 
 class InventoryMovementProduct implements InventoryMovementProductInterface

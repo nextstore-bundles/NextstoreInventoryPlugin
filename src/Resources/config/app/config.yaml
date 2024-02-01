@@ -3,12 +3,11 @@ imports:
     - "@NextstoreSyliusInventoryPlugin/Resources/config/grid/inventory_movement_log.yaml"
     - "@NextstoreSyliusInventoryPlugin/Resources/config/grid/inventory_product.yaml"
     - "@NextstoreSyliusInventoryPlugin/Resources/config/grid/warehouse.yaml"
-    - "@NextstoreSyliusInventoryPlugin/Resources/config/resources.yaml"
     - "@NextstoreSyliusInventoryPlugin/Resources/config/app/state_machine.yaml"
 
 jms_serializer:
     metadata:
         directories:
             sylius-taxonomy:
-                namespace_prefix: "Nextstore\\SyliusInventoryPlugin\\Entity"
+                namespace_prefix: "Nextstore\\SyliusInventoryPlugin\\Model"
                 path: "@NextstoreSyliusInventoryPlugin/Resources/config/serializer"

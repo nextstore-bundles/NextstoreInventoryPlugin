@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Nextstore\SyliusInventoryPlugin\Form\Type;
 
-use Nextstore\SyliusInventoryPlugin\Entity\InventoryMovement;
+use Nextstore\SyliusInventoryPlugin\Model\InventoryMovement;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;

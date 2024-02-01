@@ -1,9 +1,0 @@
-sylius_resource:
-    resources:
-        nextstore_sylius_inventory.inventory_movement_log:
-            driver: doctrine/orm
-            classes:
-                model: Nextstore\SyliusInventoryPlugin\Entity\InventoryMovementLog
-                interface: Nextstore\SyliusInventoryPlugin\Entity\InventoryMovementLogInterface
-                repository: Nextstore\SyliusInventoryPlugin\Repository\Inventory\InventoryMovementLogRepository
-                factory: Sylius\Component\Resource\Factory\Factory

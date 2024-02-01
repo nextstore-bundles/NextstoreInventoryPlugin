@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Nextstore\SyliusInventoryPlugin\Entity;
+namespace Nextstore\SyliusInventoryPlugin\Model;
 
 use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
@@ -23,10 +23,13 @@ class InventoryMovement implements InventoryMovementInterface
 
     protected ?int $id = null;
 
+    /** @var string */
     private ?string $type;
 
+    /** @var string */
     private ?string $state;
 
+    /** @var string */
     private ?string $notes;
 
     private ?DateTime $assignDate;

@@ -1,4 +1,4 @@
-Nextstore\SyliusInventoryPlugin\Entity\InventoryMovementProduct:
+Nextstore\SyliusInventoryPlugin\Model\InventoryMovementProduct:
     exclusion_policy: ALL
     xml_root_name: inventory_movement_product
     properties:
@@ -23,9 +23,9 @@ Nextstore\SyliusInventoryPlugin\Entity\InventoryMovementProduct:
             groups: [Default, Detailed]
         movement:
             expose: true
-            type: 'Nextstore\SyliusInventoryPlugin\Entity\InventoryMovementInterface'
+            type: 'Nextstore\SyliusInventoryPlugin\Model\InventoryMovementInterface'
             groups: [Default, Detailed]
         product:
             expose: true
-            type: 'Nextstore\SyliusInventoryPlugin\Entity\InventoryProduct'
+            type: 'Nextstore\SyliusInventoryPlugin\Model\InventoryProduct'
             groups: [Default, Detailed]

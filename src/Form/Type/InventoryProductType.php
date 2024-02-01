@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Nextstore\SyliusInventoryPlugin\Form\Type;
 
-use Nextstore\SyliusInventoryPlugin\Entity\Warehouse;
+use Nextstore\SyliusInventoryPlugin\Model\Warehouse;
 use Sylius\Bundle\ProductBundle\Form\Type\ProductAutocompleteChoiceType;
 use Sylius\Bundle\ResourceBundle\Form\Type\AbstractResourceType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
