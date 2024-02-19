@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Nextstore\SyliusInventoryPlugin\Model;
 
-use Sylius\Component\Core\Model\Product;
+use Sylius\Component\Product\Model\ProductInterface;
 use Sylius\Component\Resource\Model\ResourceInterface;
 use Sylius\Component\Resource\Model\TimestampableInterface;
 
@@ -14,13 +14,13 @@ interface InventoryProductInterface extends ResourceInterface, TimestampableInte
 
     public function setStock(int $stock): void;
 
-    public function getWarehouse(): ?Warehouse;
+    public function getWarehouse(): ?WarehouseInterface;
 
-    public function setWarehouse(?Warehouse $warehouse): void;
+    public function setWarehouse(?WarehouseInterface $warehouse): void;
 
-    public function getProduct(): ?Product;
+    public function getProduct(): ?ProductInterface;
 
-    public function setProduct(?Product $product): void;
+    public function setProduct(?ProductInterface $product): void;
 
     public function getProductCode(): ?string;
 

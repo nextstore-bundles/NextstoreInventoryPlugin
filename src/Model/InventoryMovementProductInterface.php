@@ -13,13 +13,13 @@ interface InventoryMovementProductInterface extends ResourceInterface, Timestamp
 
     public function setQuantity(int $quantity): void;
 
-    public function getMovement(): ?InventoryMovement;
+    public function getMovement(): ?InventoryMovementInterface;
 
-    public function setMovement(?InventoryMovement $movement): void;
+    public function setMovement(?InventoryMovementInterface $movement): void;
 
-    public function getProduct(): ?InventoryProduct;
+    public function getProduct(): ?InventoryProductInterface;
 
-    public function setProduct(?InventoryProduct $product): void;
+    public function setProduct(?InventoryProductInterface $product): void;
 
     public function getNotes(): ?string;
 

@@ -18,7 +18,7 @@
             <join-column name="movement_id" referenced-column-name="id" nullable="true" />
         </many-to-one>
         <many-to-one field="product"
-            target-entity="Nextstore\SyliusInventoryPlugin\Model\InventoryProduct"
+            target-entity="Nextstore\SyliusInventoryPlugin\Model\InventoryProductInterface"
         >
             <join-column name="product_id" referenced-column-name="id" nullable="true" />
         </many-to-one>

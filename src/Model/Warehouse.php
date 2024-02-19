@@ -80,7 +80,7 @@ class Warehouse implements WarehouseInterface
         return $this->products;
     }
 
-    public function addProduct(InventoryProduct $product): void
+    public function addProduct(InventoryProductInterface $product): void
     {
         if (!$this->products->contains($product)) {
             $this->products->add($product);
@@ -88,7 +88,7 @@ class Warehouse implements WarehouseInterface
         }
     }
 
-    public function removeProduct(InventoryProduct $product): void
+    public function removeProduct(InventoryProductInterface $product): void
     {
         if ($this->products->contains($product)) {
             $this->products->remove($product);
@@ -101,7 +101,7 @@ class Warehouse implements WarehouseInterface
         return $this->movements;
     }
 
-    public function addMovement(InventoryMovement $movement): void
+    public function addMovement(InventoryMovementInterface $movement): void
     {
         if (!$this->movements->contains($movement)) {
             $this->movements->add($movement);
@@ -109,7 +109,7 @@ class Warehouse implements WarehouseInterface
         }
     }
 
-    public function removeMovement(InventoryMovement $movement): void
+    public function removeMovement(InventoryMovementInterface $movement): void
     {
         if ($this->movements->contains($movement)) {
             $this->movements->remove($movement);
@@ -122,7 +122,7 @@ class Warehouse implements WarehouseInterface
         return $this->logs;
     }
 
-    public function addLog(InventoryMovementLog $log): void
+    public function addLog(InventoryMovementLogInterface $log): void
     {
         if (!$this->logs->contains($log)) {
             $this->logs->add($log);
@@ -130,7 +130,7 @@ class Warehouse implements WarehouseInterface
         }
     }
 
-    public function removeLog(InventoryMovementLog $log): void
+    public function removeLog(InventoryMovementLogInterface $log): void
     {
         if ($this->logs->contains($log)) {
             $this->logs->remove($log);

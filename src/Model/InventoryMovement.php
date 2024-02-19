@@ -7,7 +7,7 @@ namespace Nextstore\SyliusInventoryPlugin\Model;
 use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
-use Sylius\Component\Core\Model\AdminUser;
+use Sylius\Component\Core\Model\AdminUserInterface;
 use Sylius\Component\Resource\Model\TimestampableTrait;
 
 class InventoryMovement implements InventoryMovementInterface
@@ -19,7 +19,7 @@ class InventoryMovement implements InventoryMovementInterface
 
     public const STATE_NEW = 'new';
     public const STATE_COMPLETED = 'completed';
-    public const STATE_CANCELLED= 'cancelled';
+    public const STATE_CANCELLED = 'cancelled';
 
     protected ?int $id = null;
 
@@ -34,9 +34,9 @@ class InventoryMovement implements InventoryMovementInterface
 
     private ?DateTime $assignDate;
 
-    private Warehouse $warehouse;
+    private WarehouseInterface $warehouse;
 
-    private ?AdminUser $createdBy;
+    private ?AdminUserInterface $createdBy;
 
     private Collection $products;
 
@@ -83,22 +83,22 @@ class InventoryMovement implements InventoryMovementInterface
         $this->notes = $notes;
     }
 
-    public function getWarehouse(): ?Warehouse
+    public function getWarehouse(): ?WarehouseInterface
     {
         return $this->warehouse;
     }
 
-    public function setWarehouse(?Warehouse $warehouse): void
+    public function setWarehouse(?WarehouseInterface $warehouse): void
     {
         $this->warehouse = $warehouse;
     }
 
-    public function getCreatedBy(): ?AdminUser
+    public function getCreatedBy(): ?AdminUserInterface
     {
         return $this->createdBy;
     }
 
-    public function setCreatedBy(?AdminUser $createdBy): void
+    public function setCreatedBy(?AdminUserInterface $createdBy): void
     {
         $this->createdBy = $createdBy;
     }
@@ -118,7 +118,7 @@ class InventoryMovement implements InventoryMovementInterface
         return $this->products;
     }
 
-    public function addProduct(InventoryMovementProduct $product): void
+    public function addProduct(InventoryMovementProductInterface $product): void
     {
         if (!$this->products->contains($product)) {
             $this->products->add($product);
@@ -126,7 +126,7 @@ class InventoryMovement implements InventoryMovementInterface
         }
     }
 
-    public function removeProduct(InventoryMovementProduct $product): void
+    public function removeProduct(InventoryMovementProductInterface $product): void
     {
         if ($this->products->contains($product)) {
             $this->products->remove($product);

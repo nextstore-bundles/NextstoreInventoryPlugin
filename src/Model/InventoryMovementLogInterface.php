@@ -29,9 +29,9 @@ interface InventoryMovementLogInterface extends ResourceInterface, Timestampable
 
     public function setAssignDate(?\DateTime $assignDate): void;
 
-    public function getWarehouse(): Warehouse;
+    public function getWarehouse(): WarehouseInterface;
 
-    public function setWarehouse(Warehouse $warehouse): void;
+    public function setWarehouse(?WarehouseInterface $warehouse): void;
 
     public function recalculate(): void;
 }

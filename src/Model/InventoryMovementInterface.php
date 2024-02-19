@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Nextstore\SyliusInventoryPlugin\Model;
 
 use Doctrine\Common\Collections\Collection;
-use Sylius\Component\Core\Model\AdminUser;
+use Sylius\Component\Core\Model\AdminUserInterface;
 use Sylius\Component\Resource\Model\ResourceInterface;
 use Sylius\Component\Resource\Model\TimestampableInterface;
 
@@ -23,13 +23,13 @@ interface InventoryMovementInterface extends ResourceInterface, TimestampableInt
 
     public function setNotes(?string $notes): void;
 
-    public function getWarehouse(): ?Warehouse;
+    public function getWarehouse(): ?WarehouseInterface;
 
-    public function setWarehouse(?Warehouse $warehouse): void;
+    public function setWarehouse(?WarehouseInterface $warehouse): void;
 
-    public function getCreatedBy(): ?AdminUser;
+    public function getCreatedBy(): ?AdminUserInterface;
 
-    public function setCreatedBy(?AdminUser $createdBy): void;
+    public function setCreatedBy(?AdminUserInterface $createdBy): void;
 
     public function getAssignDate(): ?\DateTime;
 
@@ -37,7 +37,7 @@ interface InventoryMovementInterface extends ResourceInterface, TimestampableInt
 
     public function getProducts(): Collection|null;
 
-    public function addProduct(InventoryMovementProduct $product): void;
+    public function addProduct(InventoryMovementProductInterface $product): void;
 
-    public function removeProduct(InventoryMovementProduct $product): void;
+    public function removeProduct(InventoryMovementProductInterface $product): void;
 }
