@@ -27,7 +27,7 @@ Nextstore\SyliusInventoryPlugin\Model\InventoryProduct:
             groups: [Default, Detailed]
         product:
             expose: true
-            type: 'Sylius\Component\Core\Model\Product'
+            type: 'Sylius\Component\Product\Model\Product'
             groups: [Default, Detailed]
     virtual_properties:
         getProductCode:

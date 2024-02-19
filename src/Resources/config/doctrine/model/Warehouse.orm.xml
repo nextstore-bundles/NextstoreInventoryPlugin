@@ -11,7 +11,7 @@
             <generator strategy="AUTO" />
         </id>
         <one-to-many field="products"
-            target-entity="Nextstore\SyliusInventoryPlugin\Model\InventoryProduct"
+            target-entity="Nextstore\SyliusInventoryPlugin\Model\InventoryProductInterface"
             mapped-by="warehouse"
             fetch="EXTRA_LAZY">
             <cascade>
@@ -19,12 +19,12 @@
             </cascade>
         </one-to-many>
         <one-to-many field="movements"
-            target-entity="Nextstore\SyliusInventoryPlugin\Model\InventoryMovement"
+            target-entity="Nextstore\SyliusInventoryPlugin\Model\InventoryMovementInterface"
             mapped-by="warehouse"
             fetch="EXTRA_LAZY">
         </one-to-many>
         <one-to-many field="logs"
-            target-entity="Nextstore\SyliusInventoryPlugin\Model\InventoryMovementLog"
+            target-entity="Nextstore\SyliusInventoryPlugin\Model\InventoryMovementLogInterface"
             mapped-by="warehouse"
             fetch="EXTRA_LAZY">
         </one-to-many>

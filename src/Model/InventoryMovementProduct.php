@@ -12,9 +12,9 @@ class InventoryMovementProduct implements InventoryMovementProductInterface
 
     protected ?int $id = null;
 
-    private InventoryProduct $product;
+    private InventoryProductInterface $product;
 
-    private InventoryMovement $movement;
+    private InventoryMovementInterface $movement;
 
     private int $quantity = 1;
 
@@ -24,7 +24,7 @@ class InventoryMovementProduct implements InventoryMovementProductInterface
     public function __construct()
     {
         $this->createdAt = new \DateTime;
-        $this->updatedAt= new \DateTime;
+        $this->updatedAt = new \DateTime;
     }
 
     // public function __toString()
@@ -47,22 +47,22 @@ class InventoryMovementProduct implements InventoryMovementProductInterface
         $this->quantity = $quantity;
     }
 
-    public function getMovement(): ?InventoryMovement
+    public function getMovement(): ?InventoryMovementInterface
     {
         return $this->movement;
     }
 
-    public function setMovement(?InventoryMovement $movement): void
+    public function setMovement(?InventoryMovementInterface $movement): void
     {
         $this->movement = $movement;
     }
 
-    public function getProduct(): ?InventoryProduct
+    public function getProduct(): ?InventoryProductInterface
     {
         return $this->product;
     }
 
-    public function setProduct(?InventoryProduct $product): void
+    public function setProduct(?InventoryProductInterface $product): void
     {
         $this->product = $product;
     }

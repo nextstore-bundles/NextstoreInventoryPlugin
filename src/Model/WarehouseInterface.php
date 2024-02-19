@@ -24,19 +24,19 @@ interface WarehouseInterface extends ResourceInterface, TimestampableInterface
 
     public function getProducts(): Collection|null;
 
-    public function addProduct(InventoryProduct $product): void;
+    public function addProduct(InventoryProductInterface $product): void;
 
-    public function removeProduct(InventoryProduct $product): void;
+    public function removeProduct(InventoryProductInterface $product): void;
 
     public function getMovements(): Collection|null;
 
-    public function addMovement(InventoryMovement $movement): void;
+    public function addMovement(InventoryMovementInterface $movement): void;
 
-    public function removeMovement(InventoryMovement $movement): void;
+    public function removeMovement(InventoryMovementInterface $movement): void;
 
     public function getLogs(): Collection|null;
 
-    public function addLog(InventoryMovementLog $log): void;
+    public function addLog(InventoryMovementLogInterface $log): void;
 
-    public function removeLog(InventoryMovementLog $log): void;
-    }
+    public function removeLog(InventoryMovementLogInterface $log): void;
+}

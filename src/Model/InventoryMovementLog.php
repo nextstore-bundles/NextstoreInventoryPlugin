@@ -27,12 +27,12 @@ class InventoryMovementLog implements InventoryMovementLogInterface
     /** @var int */
     private int $subtracted = 0;
 
-    private Warehouse $warehouse;
+    private WarehouseInterface $warehouse;
 
     public function __construct()
     {
         $this->createdAt = new \DateTime;
-        $this->updatedAt= new \DateTime;
+        $this->updatedAt = new \DateTime;
     }
 
     public function getId(): ?int
@@ -78,7 +78,7 @@ class InventoryMovementLog implements InventoryMovementLogInterface
 
     public function setSubtracted(int $subtracted): void
     {
-        $this->subtracted= $subtracted;
+        $this->subtracted = $subtracted;
         $this->recalculate();
     }
 
@@ -92,12 +92,12 @@ class InventoryMovementLog implements InventoryMovementLogInterface
         $this->assignDate = $assignDate;
     }
 
-    public function getWarehouse(): Warehouse
+    public function getWarehouse(): WarehouseInterface
     {
         return $this->warehouse;
     }
 
-    public function setWarehouse(Warehouse $warehouse): void
+    public function setWarehouse(?WarehouseInterface $warehouse): void
     {
         $this->warehouse = $warehouse;
     }

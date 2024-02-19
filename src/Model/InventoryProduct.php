@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Nextstore\SyliusInventoryPlugin\Model;
 
-use Sylius\Component\Core\Model\Product;
+use Sylius\Component\Product\Model\ProductInterface;
 use Sylius\Component\Resource\Model\TimestampableTrait;
 
 class InventoryProduct implements InventoryProductInterface
@@ -13,12 +13,12 @@ class InventoryProduct implements InventoryProductInterface
 
     protected ?int $id = null;
 
-    private Product $product;
+    private ProductInterface $product;
 
     /** @var int */
     private int $stock = 0;
 
-    private Warehouse $warehouse;
+    private WarehouseInterface $warehouse;
 
     /** @var string */
     private string $productCode;
@@ -26,7 +26,7 @@ class InventoryProduct implements InventoryProductInterface
     public function __construct()
     {
         $this->createdAt = new \DateTime;
-        $this->updatedAt= new \DateTime;
+        $this->updatedAt = new \DateTime;
     }
 
     public function getId(): ?int
@@ -44,22 +44,22 @@ class InventoryProduct implements InventoryProductInterface
         $this->stock = $stock;
     }
 
-    public function getWarehouse(): ?Warehouse
+    public function getWarehouse(): ?WarehouseInterface
     {
         return $this->warehouse;
     }
 
-    public function setWarehouse(?Warehouse $warehouse): void
+    public function setWarehouse(?WarehouseInterface $warehouse): void
     {
         $this->warehouse = $warehouse;
     }
 
-    public function getProduct(): ?Product
+    public function getProduct(): ?ProductInterface
     {
         return $this->product;
     }
 
-    public function setProduct(?Product $product): void
+    public function setProduct(?ProductInterface $product): void
     {
         $this->product = $product;
     }

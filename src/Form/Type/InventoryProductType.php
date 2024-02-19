@@ -37,10 +37,8 @@ class InventoryProductType extends AbstractResourceType
                 'constraints' => [
                     new NotNull(null, 'choose ware house')
                 ]
-            ])
-        ;
+            ]);
         $builder->addEventListener(FormEvents::POST_SUBMIT, [$this, 'onPostSubmit']);
-
     }
 
     /**
