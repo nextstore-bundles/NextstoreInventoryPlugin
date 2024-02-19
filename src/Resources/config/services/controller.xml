@@ -8,8 +8,8 @@
         <service id="nextstore_sylius_inventory.controller.add_product_to_movement_action"
             class="Nextstore\SyliusInventoryPlugin\Controller\Admin\Action\AddProductToMovementAction"
         >
+            <argument type="service" id="doctrine.orm.entity_manager" />
             <argument type="service" id="nextstore_sylius_inventory.service.inventory_movement" />
-            <!-- <argument type="service" id="doctrine.orm.entity_manager" /> -->
             <argument type="service" id="twig" />
             <call method="setContainer">
                 <argument type="service" id="service_container" />
