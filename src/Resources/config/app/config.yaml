@@ -8,6 +8,6 @@ imports:
 jms_serializer:
     metadata:
         directories:
-            sylius-taxonomy:
+            nextstore-sylius-inventory:
                 namespace_prefix: "Nextstore\\SyliusInventoryPlugin\\Model"
                 path: "@NextstoreSyliusInventoryPlugin/Resources/config/serializer"
